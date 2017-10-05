@@ -1,0 +1,6 @@
+<h1>Homepage</h1>
+
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  <%= link_to "Выход", destroy_user_session_path, method: :delete %>
+<% end %>
