@@ -1,6 +1,6 @@
 <h1>Admin Dashboard</h1>
 
 <% if admin_signed_in? %>
+  <i class="material-icons">email</i>
   <%= current_admin.email %>
-  <%= link_to "Выход", destroy_admin_session_path, method: :delete %>
 <% end %>

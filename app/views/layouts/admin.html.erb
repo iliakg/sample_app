@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Admin</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi, user-scalable=no" />
+  <link rel="icon" type="image/png" href="<%= asset_path 'favicon-32x32.png' %>" sizes="32x32">
+  <link rel="icon" type="image/png" href="<%= asset_path 'favicon-16x16.png' %>" sizes="16x16">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'admin/admin_application', media: 'all' %>
   <%= javascript_include_tag 'admin/admin_application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
+<div id="wrapper">
+  <div class="page-container">
+    <div class='sidebar'><%= render 'admin/shared/sidebar' %></div>
+    <div class='content'><%= yield %></div>
+  </div>
+</div>
 </body>
 </html>

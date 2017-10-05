@@ -11,7 +11,7 @@ if ($categoriesEl.length > 0){
     addCategoryToHtml(el);
   });
 
-  $('ul').each(function(el){
+  $('ul', $categoriesEl).each(function(el){
     $(this).append('<li><div class="target_link">+ Добавить</div></li>');
   });
 
@@ -23,7 +23,7 @@ if ($categoriesEl.length > 0){
 }
 
 function addCategoryToHtml(category){
-  var $categoriesList = $categoriesEl.find('.base_category');
+  var $categoriesList = $('.base_category', $categoriesEl);
   var categoryHtml =  '<li><div class="target_link">'+category.title+'</div><ul data-category-id="'+category.id+'" class="parent_category"></ul></li>';
 
   if(category.parent_id){
