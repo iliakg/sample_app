@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: sample_app_dev
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: sample_app_test
+  pool: 5
+  timeout: 5000
