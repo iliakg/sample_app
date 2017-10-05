@@ -1,0 +1,64 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  font-family: HelveticaNeue,sans-serif,arial;
+  text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+ul, li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3{
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+
+// ---------------------------- CATEGORIES ----------------------------
+#categories{
+  margin: 20px;
+
+  ul{
+    width: 200px;
+    border: 1px solid #000;
+
+    li:first-of-type{
+      border-top: none;
+    }
+  }
+
+  li{
+    position: relative;
+    border-top: 1px solid #000;
+    cursor: pointer;
+
+    .target_link{
+      padding: 10px;
+    }
+
+    &:hover{
+      background: #efefef;
+    }
+  }
+
+  ul.base_category{}
+  ul.parent_category{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin: 5px;
+  }
+}
