@@ -1,8 +1,8 @@
 <div class="content_wrapper">
   <div class="header_wrapper">
     <div class="page_header">
-      <h1>Posts</h1>
-      <div class="create_button"><%= link_to '+ Create Post', new_admin_post_path %></div>
+      <h1>Pages</h1>
+      <div class="create_button"><%= link_to '+ Create page', new_admin_page_path %></div>
     </div>
   </div>
   <div class="page_wrapper">
@@ -11,16 +11,14 @@
         <table cellspacing="0" cellpadding="0">
           <thead>
             <tr>
-              <td class="left">title</td>
+              <td class="left">slug</td>
               <td>created_at</td>
             </tr>
           </thead>
           <tbody>
-            <%= render @posts %>
+            <%= render @pages %>
           </tbody>
         </table>
-
-        <%= will_paginate @posts %>
       </div>
     </div>
   </div>
