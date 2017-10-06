@@ -1,0 +1,4 @@
+<tr class="<%= 'not_published' unless post.published %>">
+  <td class="left"><%= link_to post.title, edit_admin_post_path(post) %></td>
+  <td><%= full_date(post.created_at) %></td>
+</tr>

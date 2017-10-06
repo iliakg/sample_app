@@ -1,0 +1,35 @@
+<div class="form_wrapper">
+
+  <% if @post.errors.any? %>
+    <div class="error_explanation">
+      <i class="material-icons">error_outline</i>
+      <h2>Errors:</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for [:admin, @post] do |f| %>
+    <div class="form_item">
+      <div class="label_item"><%= f.label :title %></div>
+      <div class="input_item"><%= f.text_field :title %></div>
+    </div>
+    <div class="form_item">
+      <div class="label_item"><%= f.label :text %></div>
+      <div class="input_item"><%= f.cktext_area :text %></div>
+    </div>
+    <div class="form_item check_box">
+      <div class="input_item"><%= f.check_box :published %></div>
+      <div class="label_item"><%= f.label :published %></div>
+    </div>
+    <div class="form_item actions">
+      <div class="input_item">
+        <%= f.submit %>
+        <%= link_to 'Delete', admin_post_path, method: :delete, class: 'delete', data: {confirm: 'are y sure?'} if @post.persisted? %>
+      </div>
+    </div>
+  <% end %>
+</div>

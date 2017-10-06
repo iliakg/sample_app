@@ -1,0 +1,27 @@
+<div class="content_wrapper">
+  <div class="header_wrapper">
+    <div class="page_header">
+      <h1>Posts</h1>
+      <div class="create_button"><%= link_to '+ Create Post', new_admin_post_path %></div>
+    </div>
+  </div>
+  <div class="page_wrapper">
+    <div class="page_content">
+      <div class="table_wrapper">
+        <table cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <td>title</td>
+              <td>created_at</td>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @posts %>
+          </tbody>
+        </table>
+
+        <%= will_paginate @posts %>
+      </div>
+    </div>
+  </div>
+</div>

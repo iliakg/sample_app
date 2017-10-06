@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :admins
   devise_for :users
@@ -6,7 +7,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'base#dashboard'
     resources :categories, except: :show
+    resources :posts, except: :show
   end
 
   root to: 'public#homepage'
+
+  resources :posts, only: [:index, :show]
 end
