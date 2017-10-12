@@ -1,6 +1,15 @@
-<h1>Admin Dashboard</h1>
-
-<% if admin_signed_in? %>
-  <i class="material-icons">email</i>
-  <%= current_admin.email %>
-<% end %>
+<div class="content_wrapper">
+  <div class="header_wrapper">
+    <div class="page_header">
+      <h1>Dashboard</h1>
+    </div>
+  </div>
+  <div class="page_wrapper">
+    <div class="page_content">
+      <% if admin_signed_in? %>
+        <i class="material-icons">email</i>
+        <%= current_admin.email %>
+      <% end %>
+    </div>
+  </div>
+</div>
