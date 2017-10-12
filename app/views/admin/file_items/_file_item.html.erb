@@ -1,0 +1,6 @@
+<tr>
+  <td class="image"><%= link_to thumb_image_tag(file_item).html_safe, admin_file_item_path(file_item), remote: true %></td>
+  <td class="left"><%= link_to show_name(file_item).html_safe, admin_file_item_path(file_item), remote: true %></td>
+  <td><%= full_date(file_item.created_at) %></td>
+  <td class="actions"><%= link_to_delete_file_item(file_item) %></td>
+</tr>

@@ -21,3 +21,8 @@
 /yarn-error.log
 
 .byebug_history
+
+# upload files
+public/files/
+
+*.DS_Store

@@ -28,7 +28,7 @@
     <div class="form_item actions">
       <div class="input_item">
         <%= f.submit %>
-        <%= link_to 'Delete', admin_post_path, method: :delete, class: 'delete', data: {confirm: 'are y sure?'} if @post.persisted? %>
+        <%= link_to 'Delete', admin_post_path(@post), method: :delete, class: 'delete', data: {confirm: 'are you sure?'} if @post.persisted? %>
       </div>
     </div>
   <% end %>

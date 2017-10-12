@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :posts, except: :show
     resources :pages, except: :show
+    resources :file_items, only: [:index, :show, :create, :destroy]
   end
 
   root to: 'public#homepage'

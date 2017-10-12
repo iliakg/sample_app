@@ -1,5 +1,6 @@
 $dark_bg: #263238;
 $soft_bg: #edf1f5;
+$medium_bg: #edf1f5;
 
 $main_text_color: #333333;
 $table_text_dark: #666666;
@@ -100,6 +101,76 @@ input[type='submit']{
   }
 }
 
+// -------------------------------------- POPUP --------------------------------------
+#fog_popup{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow-x: auto;
+  overflow-y: scroll;
+  z-index: 100;
+
+  #popup{
+    width: 960px;
+    background: #fff;
+    margin: 100px auto 50px;
+    padding: 20px;
+    position: relative;
+    float: none;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(34, 25, 25, 0.4);
+
+    #close_popup{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    #content_popup{
+      width: 100%;
+    }
+  }
+}
+
+#file_item_poppup_content{
+  .header_block{
+    width: 100%;
+
+    a{
+      color: $blue;
+
+      & > *{
+        vertical-align: middle;
+      }
+
+      span{
+        margin-top: 3px;
+      }
+    }
+  }
+
+  .attached_file_url{
+    width: 100%;
+
+    input[type="text"]{
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+
+  .attached_file{
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
 
 // ---------------------------- SIDEBAR ----------------------------
 #sidebar{
@@ -177,6 +248,7 @@ ul.sidebar-list{
       .page_header{
         display: table-cell;
         vertical-align: middle;
+        position: relative;
         padding: 0 20px;
       }
     }
@@ -218,6 +290,12 @@ ul.sidebar-list{
   table{
     width: 100%;
 
+    tr:hover{
+      td.actions a{
+        display: inline;
+      }
+    }
+
     td{
       padding: 10px 5px;
       text-align: center;
@@ -235,11 +313,34 @@ ul.sidebar-list{
       &.right{
         text-align: right;
       }
+
+      &.image{
+        width: 48px;
+        padding: 10px;
+
+        img{
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      &.actions{
+        width: 50px;
+
+        a{
+          display: none;
+        }
+
+        a.delete{
+          color: $red;
+        }
+      }
     }
 
     thead{
       td{
         color: $table_text_dark;
+        font-weight: bold;
       }
     }
   }
@@ -298,6 +399,84 @@ ul.sidebar-list{
     top: 0;
     left: 100%;
     margin: 5px;
+  }
+}
+
+// ---------------------------- FILES ----------------------------
+#progress_bar {
+  display: none;
+  background: $green;
+  height: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#new_files_dropzone{
+  height: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 20px;
+  text-align: center;
+
+  form{
+    margin: 0px;
+
+    input{
+      display: none;
+    }
+
+    label{
+      background: $green;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 10px;
+      padding: 10px 30px;
+      color: #ffffff;
+      cursor: pointer;
+
+      .material-icons{
+        vertical-align: middle;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  .dropzone_title{
+    width: 100%;
+    height: 480px;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    position: relative;
+    vertical-align: top;
+    padding-top: 200px;
+    z-index: 10;
+    border: 2px dashed $green;
+
+    .drop_label{
+      font-size: 28px;
+    }
+
+    .material-icons{
+      font-size: 38px;
+    }
+  }
+
+  &.in {
+    .dropzone_title{
+      display: block;
+    }
+  }
+
+  &.hover {
+    .dropzone_title{
+      background: rgba(230, 255, 230, 0.9);
+    }
   }
 }
 

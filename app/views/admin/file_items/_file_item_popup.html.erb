@@ -1,0 +1,7 @@
+<div id="file_item_poppup_content">
+  <div class="header_block"><%= link_to_dowload_file_item(@file_item) %></div>
+  <div class="attached_file_url">
+    <input type="text" value="<%= request.protocol + request.host_with_port + @file_item.attached_file_url %>" readonly="readonly">
+  </div>
+  <div class="attached_file"><%= image_tag @file_item.attached_file_url if @file_item.attached_file_url(:thumb) %></div>
+</div>

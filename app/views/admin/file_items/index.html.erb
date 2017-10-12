@@ -1,0 +1,48 @@
+<div id="progress_bar" style="width: 0%;"></div>
+
+<div id="fog_popup">
+  <div id="popup">
+    <div id="close_popup"><i class="material-icons">close</i></div>
+    <div id="content_popup"></div>
+  </div>
+</div>
+
+<div class="content_wrapper">
+  <div class="header_wrapper">
+    <div class="page_header">
+      <h1>Files</h1>
+      <div id="new_files_dropzone">
+        <div class="dropzone_title">
+          <div class="drop_label">Drop files here</div>
+          <i class="material-icons">cloud_upload</i>
+        </div>
+        <%= form_for FileItem.new, url: admin_file_items_path, remote: true do |f| %>
+          <%= f.label :attached_file, "<i class='material-icons'>file_upload</i> Upload File".html_safe %>
+          <%= f.file_field :attached_file, multiple: true, name: "file_item[attached_file]" %>
+          <%= f.submit "Dowload File" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="page_wrapper">
+    <div class="page_content">
+      <div class="table_wrapper">
+        <table cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <td class="left"></td>
+              <td class="left">title</td>
+              <td>created_at</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @file_items %>
+          </tbody>
+        </table>
+
+        <%= will_paginate @file_items %>
+      </div>
+    </div>
+  </div>
+</div>
