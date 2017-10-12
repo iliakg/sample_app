@@ -4,19 +4,19 @@
 </div>
 
 <ul class="sidebar-list">
-  <li>
+  <li <%= dashboard_active %>>
     <a href='<%= admin_path %>'><i class="material-icons">home</i> Dashaboard</a>
   </li>
-  <li>
+  <li <%= categories_active %>>
     <a href='<%= admin_categories_path %>'><i class="material-icons">list</i> Categories</a>
   </li>
-  <li>
+  <li <%= files_active %>>
     <a href='<%= admin_file_items_path %>'><i class="material-icons">insert_drive_file</i> Files</a>
   </li>
-  <li>
+  <li <%= posts_active %>>
     <a href='<%= admin_posts_path %>'><i class="material-icons">subject</i> Posts</a>
   </li>
-  <li>
+  <li <%= pages_active %>>
     <a href='<%= admin_pages_path %>'><i class="material-icons">description</i> Pages</a>
   </li>
 </ul>
