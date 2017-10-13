@@ -1,36 +1,48 @@
-$( document ).ready(function() {
-var $categoriesEl = $('#categories');
+$(document).ready(function() {
 
-if ($categoriesEl.length > 0){
+if ($('#categories').length > 0) {
   var categoriesData = JSON.parse($('#categories_data').val());
-  var html = '<ul class="base_category"></ul>';
+  $('#categories').html('<ul class="base_category"></ul>');
 
-  $categoriesEl.html(html);
-
-  categoriesData.forEach(function(el){
+  categoriesData.forEach(function(el) {
     addCategoryToHtml(el);
   });
+  updateCreateCategoryLinks();
 
-  $('ul', $categoriesEl).each(function(el){
-    $(this).append('<li><div class="target_link">+ Добавить</div></li>');
-  });
+  $('#categories').on('click', '.target_link', function(e) {
+    if (e.target.className == 'edit_link' || $(e.target).parents('.edit_link').length > 0) {
+      e.preventDefault();
+      return;
+    }
 
-  $($categoriesEl).on('click', '.target_link', function(a, b){
     $('.target_link').next('ul').hide();
     $(this).parents('ul').show();
     $(this).next('ul').show();
-  })
+  });
 }
+});
 
-function addCategoryToHtml(category){
-  var $categoriesList = $('.base_category', $categoriesEl);
-  var categoryHtml =  '<li><div class="target_link">'+category.title+'</div><ul data-category-id="'+category.id+'" class="parent_category"></ul></li>';
+function addCategoryToHtml(category) {
+  var formPath = '/admin/categories/'+category.id+'/edit';
+  var categoryHtml =  '<li><div class="target_link" data-category-id="'+category.id+'"><span>'+category.title+'</span><a href="'+formPath+'" data-remote="true" class="edit_link"><i class="material-icons">edit</i></a></div><ul data-category-id="'+category.id+'" class="parent_category"></ul></li>';
 
-  if(category.parent_id){
+  if (category.parent_id) {
     $('.parent_category[data-category-id="'+category.parent_id+'"]').append(categoryHtml)
-  }else{
-    $categoriesList.append(categoryHtml);
+  } else {
+    $('#categories .base_category').append(categoryHtml);
   }
 }
 
-});
+function updateCreateCategoryLinks() {
+  $('#categories ul .add_category').remove();
+  $('#categories ul').each(function(el) {
+    var formPath = '/admin/categories/new?parent_category_id='+($(this).data('category-id') || '');
+    $(this).append('<li class="add_category"><a href="'+formPath+'" data-remote="true" class="new_category_link">+ Add</a></li>');
+  });
+}
+
+function createCategory(category) {
+  addCategoryToHtml(category);
+  updateCreateCategoryLinks();
+}
+

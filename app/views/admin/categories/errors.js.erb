@@ -1,0 +1,13 @@
+<% if @category.errors.any? %>
+  html = '<div class="error_explanation">'+
+    '<i class="material-icons">error_outline</i>'+
+    '<h2>Errors:</h2>'+
+    '<ul>'+
+      <% @category.errors.full_messages.each do |msg| %>
+        '<li><%= msg %></li>'+
+      <% end %>
+    '</ul>'+
+  '</div>';
+
+  $('.popup_form_wrapper form').prepend(html);
+<% end %>

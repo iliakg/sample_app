@@ -1,6 +1,6 @@
 $dark_bg: #263238;
 $soft_bg: #edf1f5;
-$medium_bg: #edf1f5;
+$medium_bg: #f3f3f3;
 
 $main_text_color: #333333;
 $table_text_dark: #666666;
@@ -98,6 +98,7 @@ input[type='submit']{
     width: 100%;
     display: table-cell;
     vertical-align: top;
+    overflow: scroll;
   }
 }
 
@@ -171,6 +172,9 @@ input[type='submit']{
   }
 }
 
+#new_category_poppup_content{
+
+}
 
 // ---------------------------- SIDEBAR ----------------------------
 #sidebar{
@@ -371,28 +375,52 @@ ul.sidebar-list{
 
 // ---------------------------- CATEGORIES ----------------------------
 #categories{
-  margin: 20px;
 
   ul{
     width: 200px;
-    border: 1px solid #000;
-
-    li:first-of-type{
-      border-top: none;
-    }
   }
 
   li{
+    background: #ffffff;
+    margin-bottom: -1px;
     position: relative;
-    border-top: 1px solid #000;
+    border: 1px solid $form_border_color;
     cursor: pointer;
 
-    .target_link{
+    &:before{
+      content: '〉';
+      @include inline_block;
+      float: right;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    .target_link, .new_category_link{
       padding: 10px;
+      display: block;
+      color: $main_text_color;
+
+      .edit_link{
+        display: none;
+        width: 20px;
+        text-align: right;
+        .material-icons{
+          font-size: 14px;
+          color: $main_text_color;
+        }
+      }
+
+      &:hover .edit_link{
+        display: inline-block;
+      }
     }
 
     &:hover{
-      background: #efefef;
+      background: $medium_bg;
+    }
+
+    &.add_category:before{
+      display: none;
     }
   }
 
@@ -502,7 +530,13 @@ tr.not_published{
   width: 100%;
   background: #ffffff;
   padding: 20px;
+}
 
+.popup_form_wrapper{
+  margin-top: 30px;
+}
+
+.form_wrapper, .popup_form_wrapper{
   .error_explanation{
     width: 100%;
     background: $red_soft;
@@ -530,7 +564,9 @@ tr.not_published{
 
   .form_item{
     width: 100%;
-    margin-bottom: 30px;
+    margin-top: 30px;
+
+    &:first-of-type{ margin-top: 0; }
 
     .label_item{
       font-size: 16px;
