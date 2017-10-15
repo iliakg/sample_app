@@ -7,7 +7,7 @@ class Admin::FileItemsController < Admin::BaseController
 
   def create
     @file_item = FileItem.new(files_params)
-    @file_item.fetch_name!
+    @file_item.fetch_file_data!
 
     if @file_item.save
       render 'file_item_saved'

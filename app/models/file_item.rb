@@ -1,20 +1,33 @@
 class FileItem < ApplicationRecord
+  include CkeditorAsset
+
   mount_uploader :attached_file, FileItemUploader
 
-  validates :attached_file, presence: :true
+  scope :images, -> { where('content_type like ?', "image%") }
 
   self.per_page = 20
 
+  validates :attached_file, presence: :true
+
   after_initialize :generate_namehash
 
-  def fetch_name!
-    self.name = attached_file.file.original_filename if attached_file.present?
+  def fetch_file_data!
+    if attached_file.present?
+      self.name = attached_file.file.original_filename
+      self.content_type = attached_file.content_type
+    end
+  end
+
+  def image?
+    content_type.start_with?('image')
   end
 
   private
 
   def generate_namehash
+    return if namehash.present?
+
     array = [('a'..'z'), ('A'..'Z'), (0..9)].map { |i| i.to_a }.flatten
-    self.namehash ||= (0...8).map{ array[rand(array.length)] }.join
+    self.namehash = (0...8).map{ array[rand(array.length)] }.join
   end
 end

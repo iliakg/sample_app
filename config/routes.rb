@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   root to: 'public#homepage'
 
   resources :posts, only: [:index, :show]
-
   resources :pages, only: [:index]
   get '/:slug', to: 'pages#show'
 end

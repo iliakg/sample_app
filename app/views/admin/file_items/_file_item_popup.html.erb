@@ -3,5 +3,5 @@
   <div class="attached_file_url">
     <input type="text" value="<%= request.protocol + request.host_with_port + @file_item.attached_file_url %>" readonly="readonly">
   </div>
-  <div class="attached_file"><%= image_tag @file_item.attached_file_url if @file_item.attached_file_url(:thumb) %></div>
+  <div class="attached_file"><%= image_tag @file_item.attached_file_url if @file_item.image? %></div>
 </div>

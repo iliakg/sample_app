@@ -5,8 +5,7 @@ module FileItemHelper
   end
 
   def thumb_image_tag(file_item)
-    thumb_url = file_item.attached_file_url(:thumb)
-    image_tag thumb_url.present? ? thumb_url : 'file_default.png'
+    image_tag file_item.image? ? file_item.attached_file_url(:thumb) : 'file_default.png'
   end
 
   def link_to_dowload_file_item(file_item)
