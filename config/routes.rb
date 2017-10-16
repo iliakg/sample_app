@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/', to: 'base#dashboard'
+    resources :users, except: :show
     resources :categories, except: :show
     resources :posts, except: :show
     resources :pages, except: :show

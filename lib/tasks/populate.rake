@@ -23,6 +23,13 @@ namespace :db do
       Category.create(title: "51 #{FFaker::Lorem.word}", parent_id: c5.id)
 
 
+    dummy :users, 100 do
+      post = User.new
+      post.email = FFaker::Internet.email
+      post.password = 'password'
+      post.save
+    end
+
     dummy :posts, 100 do
       post = Post.new
       post.title = FFaker::Lorem.sentence

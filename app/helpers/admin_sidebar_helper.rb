@@ -3,6 +3,10 @@ module AdminSidebarHelper
     "class=active" if controller_name == 'base' && action_name == 'dashboard'
   end
 
+  def users_active
+    "class=active" if controller_name == 'users'
+  end
+
   def categories_active
     "class=active" if controller_name == 'categories'
   end

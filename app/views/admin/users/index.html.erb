@@ -1,0 +1,27 @@
+<div class="content_wrapper">
+  <div class="header_wrapper">
+    <div class="page_header">
+      <h1>Users</h1>
+      <div class="create_button"><%= link_to '+ Create User', new_admin_user_path %></div>
+    </div>
+  </div>
+  <div class="page_wrapper">
+    <div class="page_content">
+      <div class="table_wrapper">
+        <table cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <td class="left">email</td>
+              <td>created_at</td>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @users %>
+          </tbody>
+        </table>
+
+        <%= will_paginate @users %>
+      </div>
+    </div>
+  </div>
+</div>
