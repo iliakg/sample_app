@@ -419,6 +419,10 @@ ul.sidebar-list{
       }
     }
 
+    .new_category_link{
+      color: $green;
+    }
+
     &:hover{
       background: $medium_bg;
     }

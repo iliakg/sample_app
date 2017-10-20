@@ -1,0 +1,83 @@
+ru:
+  activerecord:
+    attributes:
+      user:
+        email: E-mail
+        password: Пароль
+        created_at: Дата создания
+      category:
+        title: Название
+      file_item:
+        title: Название
+        created_at: Дата создания
+      post:
+        title: Название
+        text: Текст
+        published: Опубликовать
+        created_at: Дата создания
+      page:
+        slug: Идентификатор
+        content: Содержимое
+        created_at: Дата создания
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: не может быть пустым
+              taken: должен быть уникальным
+            password:
+              blank: не может быть пустым
+        category:
+          attributes:
+            title:
+              blank: не может быть пустым
+        post:
+          attributes:
+            title:
+              blank: не может быть пустым
+        page:
+          attributes:
+            slug:
+              blank: не может быть пустым
+
+  helpers:
+    submit:
+      create: Создать
+      update: Обновить
+
+  users:
+    title: Пользователи
+    new: Новый пользователь
+    create: Создать пользователя
+    edit: Редактирование пользователя
+
+  categories:
+    title: Категории
+    new: Новая категория
+    edit: Редактирование категории
+
+  file_items:
+    title: Файлы
+    download: Скачать
+    upload: Загрузить
+    drop_zone_title: Перенести сюда
+
+  posts:
+    title: Записи
+    new: Новая запись
+    create: Создать запись
+    edit: Редактирование записи
+
+  pages:
+    title: Страницы
+    new: Новая страница
+    create: Создать страницу
+    edit: Редактирование страницы
+
+  dashboard: Панель управления
+
+  errors: Ошибки
+  add: Добавить
+  delete: Удалить
+  delete_confirm: Вы уверены?

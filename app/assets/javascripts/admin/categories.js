@@ -37,7 +37,7 @@ function updateCreateCategoryLinks() {
   $('#categories ul .add_category').remove();
   $('#categories ul').each(function(el) {
     var formPath = '/admin/categories/new?parent_category_id='+($(this).data('category-id') || '');
-    $(this).append('<li class="add_category"><a href="'+formPath+'" data-remote="true" class="new_category_link">+ Add</a></li>');
+    $(this).append('<li class="add_category"><a href="'+formPath+'" data-remote="true" class="new_category_link">+ '+I18n.t('add')+'</a></li>');
   });
 }
 

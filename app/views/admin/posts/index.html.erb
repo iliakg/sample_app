@@ -1,8 +1,8 @@
 <div class="content_wrapper">
   <div class="header_wrapper">
     <div class="page_header">
-      <h1>Posts</h1>
-      <div class="create_button"><%= link_to '+ Create Post', new_admin_post_path %></div>
+      <h1><%= tt(:posts, :title) %></h1>
+      <div class="create_button"><%= link_to tt(:posts, :create), new_admin_post_path %></div>
     </div>
   </div>
   <div class="page_wrapper">
@@ -11,8 +11,8 @@
         <table cellspacing="0" cellpadding="0">
           <thead>
             <tr>
-              <td class="left">title</td>
-              <td>created_at</td>
+              <td class="left"><%= tt(:activerecord, :attributes, :post, :title) %></td>
+              <td><%= tt(:activerecord, :attributes, :post, :created_at) %></td>
             </tr>
           </thead>
           <tbody>

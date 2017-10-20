@@ -1,8 +1,8 @@
 <div class="content_wrapper">
   <div class="header_wrapper">
     <div class="page_header">
-      <h1>Pages</h1>
-      <div class="create_button"><%= link_to '+ Create page', new_admin_page_path %></div>
+      <h1><%= tt(:pages, :title) %></h1>
+      <div class="create_button"><%= link_to tt(:pages, :create), new_admin_page_path %></div>
     </div>
   </div>
   <div class="page_wrapper">
@@ -11,8 +11,8 @@
         <table cellspacing="0" cellpadding="0">
           <thead>
             <tr>
-              <td class="left">slug</td>
-              <td>created_at</td>
+              <td class="left"><%= tt(:activerecord, :attributes, :page, :slug) %></td>
+              <td><%= tt(:activerecord, :attributes, :page, :created_at) %></td>
             </tr>
           </thead>
           <tbody>

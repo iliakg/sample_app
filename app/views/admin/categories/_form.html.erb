@@ -7,7 +7,7 @@
   <div class="form_item actions">
     <div class="input_item">
       <%= f.submit %>
-      <%= link_to 'Delete', admin_category_path(@category), method: :delete, remote: true, class: 'delete', data: {confirm: 'are you sure?'} if @category.persisted? %>
+      <%= link_to tt(:delete), admin_category_path(@category), method: :delete, remote: true, class: 'delete', data: {confirm: tt(:delete_confirm)} if @category.persisted? %>
     </div>
   </div>
 <% end %>

@@ -3,7 +3,7 @@
   <% if @page.errors.any? %>
     <div class="error_explanation">
       <i class="material-icons">error_outline</i>
-      <h2>Errors:</h2>
+      <h2><%= tt(:errors) %>:</h2>
       <ul>
         <% @page.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -24,7 +24,7 @@
     <div class="form_item actions">
       <div class="input_item">
         <%= f.submit %>
-        <%= link_to 'Delete', admin_page_path, method: :delete, class: 'delete', data: {confirm: 'are y sure?'} if @page.persisted? %>
+        <%= link_to tt(:delete), admin_page_path, method: :delete, class: 'delete', data: {confirm: tt(:delete_confirm)} if @page.persisted? %>
       </div>
     </div>
   <% end %>

@@ -5,16 +5,16 @@
 <div class="content_wrapper">
   <div class="header_wrapper">
     <div class="page_header">
-      <h1>Files</h1>
+      <h1><%= tt(:file_items, :title) %></h1>
       <div id="new_files_dropzone">
         <div class="dropzone_title">
-          <div class="drop_label">Drop files here</div>
+          <div class="drop_label"><%= tt(:file_items, :drop_zone_title) %></div>
           <i class="material-icons">cloud_upload</i>
         </div>
         <%= form_for FileItem.new, url: admin_file_items_path, remote: true do |f| %>
-          <%= f.label :attached_file, "<i class='material-icons'>file_upload</i> Upload File".html_safe %>
+          <%= f.label :attached_file, "<i class='material-icons'>file_upload</i> #{tt(:file_items, :upload)}".html_safe %>
           <%= f.file_field :attached_file, multiple: true, name: "file_item[attached_file]" %>
-          <%= f.submit "Dowload File" %>
+          <%= f.submit %>
         <% end %>
       </div>
     </div>
@@ -26,8 +26,8 @@
           <thead>
             <tr>
               <td class="left"></td>
-              <td class="left">title</td>
-              <td>created_at</td>
+              <td class="left"><%= tt(:activerecord, :attributes, :file_item, :title) %></td>
+              <td><%= tt(:activerecord, :attributes, :file_item, :created_at) %></td>
               <td></td>
             </tr>
           </thead>

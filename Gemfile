@@ -14,7 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'ckeditor'
-gem "jquery-fileupload-rails"
+gem 'jquery-fileupload-rails'
+gem 'i18n-js'
 
 # backend
 gem 'devise'
