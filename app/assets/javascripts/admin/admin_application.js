@@ -5,6 +5,8 @@
 //= require jquery-fileupload/basic
 //= require ckeditor/init
 //= require ckeditor/config
+//= require air-datepicker/dist/js/datepicker.min
+//= require sample_filter/script
 //= require admin/init
 //= require admin/popup
 //= require admin/fileupload_script

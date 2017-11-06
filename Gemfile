@@ -22,6 +22,7 @@ gem 'devise'
 gem 'will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'sample_filter'
 
 group :development do
   gem 'listen', '~> 3.0.5'

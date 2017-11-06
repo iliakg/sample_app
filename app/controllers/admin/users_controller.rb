@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_action :fetch_user, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.paginate(page: params[:page]).order(created_at: :desc)
+    @users = User.filtered(params[:sample_filter]).paginate(page: params[:page])
   end
 
   def new

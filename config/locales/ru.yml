@@ -1,4 +1,21 @@
 ru:
+  sample_filter:
+    user:
+      fields:
+        email: E-mail
+        created_at: Дата создания
+        sort: Сортировать
+      sort:
+        email:
+          asc: E-mail ↓
+          desc: E-mail ↑
+        created_at:
+          asc: Дата создания ↓
+          desc: Дата создания ↑
+      buttons:
+        submit: Применить
+        clear_form: Очистить
+
   activerecord:
     attributes:
       user:
