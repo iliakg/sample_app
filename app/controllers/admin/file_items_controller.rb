@@ -2,7 +2,7 @@ class Admin::FileItemsController < Admin::BaseController
   before_action :fetch_file_item, only: [:show, :destroy]
 
   def index
-    @file_items = FileItem.order(created_at: :desc).page(params[:page])
+    @file_items = FileItem.filtered(params[:sample_filter]).paginate(page: params[:page])
   end
 
   def create

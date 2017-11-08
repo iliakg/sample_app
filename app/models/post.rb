@@ -1,4 +1,11 @@
 class Post < ApplicationRecord
+  sample_filter(
+    title: {type: :string},
+    published: {type: :boolean},
+    created_at: {type: :date},
+    sort: {type: :sorting, values: [:title, :created_at], default_value: 'created_at_desc'}
+  )
+
   has_many :taggings
   has_many :tags, through: :taggings
 

@@ -1,6 +1,12 @@
 class FileItem < ApplicationRecord
   include CkeditorAsset
 
+  sample_filter(
+    name: {type: :string},
+    created_at: {type: :date},
+    sort: {type: :sorting, values: [:name, :created_at], default_value: 'created_at_desc'}
+  )
+
   mount_uploader :attached_file, FileItemUploader
 
   scope :images, -> { where('content_type like ?', "image%") }

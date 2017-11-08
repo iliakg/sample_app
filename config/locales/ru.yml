@@ -1,5 +1,7 @@
 ru:
   sample_filter:
+    lists:
+      all_item: 'Все'
     user:
       fields:
         email: E-mail
@@ -9,6 +11,40 @@ ru:
         email:
           asc: E-mail ↓
           desc: E-mail ↑
+        created_at:
+          asc: Дата создания ↓
+          desc: Дата создания ↑
+      buttons:
+        submit: Применить
+        clear_form: Очистить
+    file_item:
+      fields:
+        name: Название
+        created_at: Дата создания
+        sort: Сортировать
+      sort:
+        name:
+          asc: Название ↓
+          desc: Название ↑
+        created_at:
+          asc: Дата создания ↓
+          desc: Дата создания ↑
+      buttons:
+        submit: Применить
+        clear_form: Очистить
+    post:
+      fields:
+        title: Название
+        published: Статус
+        created_at: Дата создания
+        sort: Сортировать
+      boolean:
+        'true': Опубликован
+        'false': НЕ Опубликован
+      sort:
+        title:
+          asc: Название ↓
+          desc: Название ↑
         created_at:
           asc: Дата создания ↓
           desc: Дата создания ↑

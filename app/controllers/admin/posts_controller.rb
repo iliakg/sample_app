@@ -2,7 +2,7 @@ class Admin::PostsController < Admin::BaseController
   before_action :fetch_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate(page: params[:page]).order(created_at: :desc)
+    @posts = Post.filtered(params[:sample_filter]).paginate(page: params[:page])
   end
 
   def new
