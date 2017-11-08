@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :posts, except: :show
     resources :pages, except: :show
     resources :file_items, only: [:index, :show, :create, :destroy]
+    resources :tags, only: :index
   end
 
   root to: 'public#homepage'

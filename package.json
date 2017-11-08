@@ -2,6 +2,7 @@
   "name": "sample_app",
   "private": true,
   "dependencies": {
-    "air-datepicker": "^2.2.3"
+    "air-datepicker": "^2.2.3",
+    "jquery-tags-input": "^1.3.5"
   }
 }

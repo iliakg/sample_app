@@ -21,6 +21,10 @@
       <div class="label_item"><%= f.label :text %></div>
       <div class="input_item"><%= f.cktext_area :text %></div>
     </div>
+    <div class="form_item">
+      <div class="label_item"><%= f.label :tag_list %></div>
+      <div class="input_item"><%= f.text_field :tag_list, id: :post_tags_list %></div>
+    </div>
     <div class="form_item check_box">
       <div class="input_item"><%= f.check_box :published %></div>
       <div class="label_item"><%= f.label :published %></div>

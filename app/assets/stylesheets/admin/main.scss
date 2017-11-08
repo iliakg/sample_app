@@ -652,3 +652,32 @@ tr.not_published{
     }
   }
 }
+
+div.tagsinput{
+  background: none;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border: 0;
+
+  span.tag{
+    background: $blue;
+    padding: 7px;
+    border: 0;
+    font-size: 1em;
+    color: #ffffff;
+
+    a{
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -1px;
+      color: #ffffff;
+    }
+  }
+
+  input{
+    height: 32px;
+    padding: 0 5px;
+    color: $table_text_dark !important;
+  }
+}

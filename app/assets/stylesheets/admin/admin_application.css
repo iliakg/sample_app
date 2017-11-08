@@ -1,5 +1,7 @@
 /*
+*= require jquery-ui.min
 *= require air-datepicker/dist/css/datepicker.min
 *= require sample_filter/style
+*= require jquery-tags-input/dist/jquery.tagsinput.min
 *= require admin/main
 */

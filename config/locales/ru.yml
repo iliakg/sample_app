@@ -30,6 +30,7 @@ ru:
       post:
         title: Название
         text: Текст
+        tag_list: Теги
         published: Опубликовать
         created_at: Дата создания
       page:
@@ -98,3 +99,4 @@ ru:
   add: Добавить
   delete: Удалить
   delete_confirm: Вы уверены?
+  add_tag_placeholder: Добавить тег
