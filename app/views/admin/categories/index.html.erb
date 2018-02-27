@@ -9,7 +9,7 @@
   <div class="page_wrapper">
     <div class="page_content">
       <input type="hidden" value="<%= @categories_json %>" id="categories_data">
-      <div id="categories"></div>
+      <div id="categories" data-nested-level-limit="<%= Category::NESTED_LEVEL_LIMIT %>"></div>
     </div>
   </div>
 </div>

@@ -86,6 +86,8 @@ ru:
           attributes:
             title:
               blank: не может быть пустым
+            parent_id:
+              limit: Достигнут лимит вложенности категорий
         post:
           attributes:
             title:

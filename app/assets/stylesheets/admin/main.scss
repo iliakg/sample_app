@@ -437,6 +437,13 @@ ul.sidebar-list{
     &.add_category:before{
       display: none;
     }
+
+    &.last_level{
+      &:before{
+        content: '';
+        display: none;
+      }
+    }
   }
 
   ul.base_category{}
